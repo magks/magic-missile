@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public bool facingRight = true;
 
-    public float speed = 2;
+    public float speed = 4;
     private Rigidbody2D rigid;
 
 
