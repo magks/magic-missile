@@ -369,8 +369,17 @@ MigrationBackup/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
+!./[Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
@@ -424,4 +433,3 @@ crashlytics-build.properties
 Assets/TextMesh\ Pro/Examples*
 Assets/TextMesh\ Pro/Examples*/*
 Assets/TextMesh\ Pro/Documentation
->>>>>>> Stashed changes
