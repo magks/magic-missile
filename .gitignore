@@ -425,11 +425,11 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-<<<<<<< Updated upstream
-=======
 
 
-# miscallaneous 
+# miscellaneous 
 Assets/TextMesh\ Pro/Examples*
 Assets/TextMesh\ Pro/Examples*/*
 Assets/TextMesh\ Pro/Documentation
+NearFinalRun_Data/
+
