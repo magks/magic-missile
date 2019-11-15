@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 354718650}
   - component: {fileID: 354718651}
   - component: {fileID: 354718652}
+  - component: {fileID: 354718647}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -247,6 +248,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &354718647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354718646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0016baf351d4d0e4888a2450a5d028e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 400
+  bulletDamage: 0
+  bulletDuration: 5
+  shotDelay: 0.33
 --- !u!4 &354718648
 Transform:
   m_ObjectHideFlags: 0
@@ -665,6 +682,16 @@ PrefabInstance:
     - target: {fileID: 4154974769887662392, guid: 198b8ec0eec70544893e6d1ce1868ff6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154974769887662399, guid: 198b8ec0eec70544893e6d1ce1868ff6,
+        type: 3}
+      propertyPath: duration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154974769887662398, guid: 198b8ec0eec70544893e6d1ce1868ff6,
+        type: 3}
+      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

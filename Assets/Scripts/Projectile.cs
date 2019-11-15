@@ -15,11 +15,14 @@ public class Projectile : MonoBehaviour
     Rigidbody2D myRigidbody;
     //int durationInUpdates;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        setDirection(moveDirection);
+        setDuration(duration);
+    }
     void Start()
     {
         myRigidbody = gameObject.GetComponent<Rigidbody2D>();
-        setDirection(moveDirection);
-        setDuration(duration);
     }
 
     // Update is called once per frame
@@ -29,11 +32,12 @@ public class Projectile : MonoBehaviour
         {
             duration -= Time.deltaTime;
             Vector2 velocity = dirVector * (speed*Time.deltaTime);
+            print(velocity);
             myRigidbody.velocity = velocity;
         }
         else
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
 
     }
@@ -67,6 +71,7 @@ public class Projectile : MonoBehaviour
                 dirVector = (new Vector2(-1, -1)).normalized;
                 break;
             case Direction.Left:
+                print("left");
                 dirVector = Vector2.left;
                 break;
             case Direction.UpLeft:
@@ -78,16 +83,24 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    public void setDirection(Vector2 direction)
+    {
+        dirVector = direction.normalized;
+        return;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (playerProjectile && collision.gameObject.tag != "Player")
+        if(collision.gameObject.GetComponent<Projectile>() == null)
         {
-            Destroy(this.gameObject);
+            if (playerProjectile && collision.gameObject.tag != "Player")
+            {
+                this.gameObject.SetActive(false);
+            }
+            else if (!playerProjectile && collision.gameObject.tag == "Player")
+            {
+                this.gameObject.SetActive(false);
+            }
         }
-        else if(! playerProjectile && collision.gameObject.tag == "Player")
-        {
-            Destroy(this.gameObject);
-        }
-        
     }
 }

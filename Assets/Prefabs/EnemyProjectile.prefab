@@ -49,7 +49,7 @@ MonoBehaviour:
   playerProjectile: 0
   damage: 0
   speed: 60
-  duration: 5
+  duration: 0
   moveDirection: 2
 --- !u!212 &4154974769887662398
 SpriteRenderer:
