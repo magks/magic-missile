@@ -31,11 +31,12 @@ public class ProjectilePool : MonoBehaviour
         projectilePool = this;
         allPools = new Dictionary<PoolID, Queue<GameObject>>();
         objectCount = new Dictionary<PoolID, (int,int)>();
+        prototypeStore = new Dictionary<PoolID, GameObject>();
         foreach(ToBePooled toPool in objectsToPool)
         {
-            if (toPool.numPooled < toPool.maxPooled)
+            if (toPool.numPooled > toPool.maxPooled)
             {
-                throw new System.ArgumentException("numPooled is less than maxPooled");
+                throw new System.ArgumentException("numPooled is greater than maxPooled");
             }
             prototypeStore[toPool.identifier] = toPool.poolItem;
             allPools[toPool.identifier] = new Queue<GameObject>();
