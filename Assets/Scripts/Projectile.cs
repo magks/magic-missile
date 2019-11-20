@@ -31,9 +31,7 @@ public class Projectile : MonoBehaviour
         if (duration > 0)
         {
             duration -= Time.deltaTime;
-            Vector2 velocity = dirVector * (speed*Time.deltaTime);
-            print(velocity);
-            myRigidbody.velocity = velocity;
+            myRigidbody.MovePosition(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) + (dirVector * (speed * Time.deltaTime)));
         }
         else
         {
@@ -71,7 +69,6 @@ public class Projectile : MonoBehaviour
                 dirVector = (new Vector2(-1, -1)).normalized;
                 break;
             case Direction.Left:
-                print("left");
                 dirVector = Vector2.left;
                 break;
             case Direction.UpLeft:
@@ -93,7 +90,7 @@ public class Projectile : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<Projectile>() == null)
         {
-            if (playerProjectile && collision.gameObject.tag != "Player")
+            if (playerProjectile && collision.gameObject.tag == "Enemy")
             {
                 this.gameObject.SetActive(false);
             }

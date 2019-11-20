@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0016baf351d4d0e4888a2450a5d028e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 400
+  bulletSpeed: 15
   bulletDamage: 0
   bulletDuration: 5
   shotDelay: 0.33
@@ -688,6 +688,11 @@ PrefabInstance:
         type: 3}
       propertyPath: duration
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154974769887662399, guid: 198b8ec0eec70544893e6d1ce1868ff6,
+        type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4154974769887662398, guid: 198b8ec0eec70544893e6d1ce1868ff6,
         type: 3}

@@ -82,24 +82,56 @@ public class Shoot : MonoBehaviour
             timeSinceLastShot -= Time.deltaTime;
         }
 
-        // Check all bullets to see if deactivated, return to pool if there are.
-        LinkedListNode<GameObject> current = bullets.First;
-        List<LinkedListNode<GameObject>> delete = new List<LinkedListNode<GameObject>>();
-        while(current != null)
+        // Check first bullet to see if deactivated, return to pool if so.
+        LinkedListNode<GameObject> first = bullets.First;
+        if (first!=null)
         {
-            if (!current.Value.activeSelf)
+            if(first.Value!=null && !first.Value.activeSelf)
             {
-                delete.Add(current);
-                ProjectilePool.projectilePool.returnPooledObject(PoolID.playerProjectile, current.Value);
+                bullets.RemoveFirst();
+                ProjectilePool.projectilePool.returnPooledObject(PoolID.playerProjectile, first.Value);
             }
-            current = current.Next;
         }
-        // Then remove nodes for returned bullets.
-        foreach(LinkedListNode<GameObject> node in delete)
-        {
-            bullets.Remove(node);
-        }
+
         
+    }
+
+    Vector2 projectileSpawnLoc(Direction dir)
+    {
+        Vector2 location = Vector2.zero;
+        float scale = 2f*gameObject.transform.localScale.x;
+        switch (dir)
+        {
+            case Direction.Up:
+                location = Vector2.up * scale;
+                break;
+            case Direction.UpRight:
+                location = (Vector2.one).normalized * scale ;
+                
+                break;
+            case Direction.Right:
+                location = Vector2.right * scale;
+                break;
+            case Direction.DownRight:
+                location = (new Vector2(1, -1)).normalized * scale;
+                break;
+            case Direction.Down:
+                location = Vector2.down * scale;
+                break;
+            case Direction.DownLeft:
+                location = (Vector2.one).normalized * -scale;
+                break;
+            case Direction.Left:
+                location = Vector2.left * scale;
+                break;
+            case Direction.UpLeft:
+                location = (new Vector2(-1, 1)).normalized * scale;
+                break;
+            default:
+                location = Vector2.zero;
+                break;
+        }
+        return location;
     }
 
     GameObject ShootBullet(Direction dir)
@@ -108,7 +140,7 @@ public class Shoot : MonoBehaviour
         Projectile bulletProperties = thisBullet.GetComponent<Projectile>();
         bullets.AddLast(thisBullet);
         thisBullet.transform.SetParent(gameObject.transform, false);
-        thisBullet.transform.localPosition = Vector2.zero;
+        thisBullet.transform.localPosition = projectileSpawnLoc(dir);
         thisBullet.transform.SetParent(null);
         thisBullet.transform.localScale = Vector3.one;
         bulletProperties.setDuration(bulletDuration);

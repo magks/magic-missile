@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerProjectile: 1
   damage: 0
-  speed: 60
+  speed: 10
   duration: 0
   moveDirection: 2
 --- !u!212 &6575682177189021218
@@ -88,8 +88,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -7469934687319369274, guid: 86b77fe33ff21fe4c8a40a7282cc526b,
+  m_SortingOrder: 8
+  m_Sprite: {fileID: -7967464566254963662, guid: 86b77fe33ff21fe4c8a40a7282cc526b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
