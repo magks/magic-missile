@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 354718650}
   - component: {fileID: 354718651}
   - component: {fileID: 354718652}
+  - component: {fileID: 354718647}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -247,6 +248,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &354718647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354718646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0016baf351d4d0e4888a2450a5d028e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 13
+  bulletDamage: 1
+  bulletDuration: 5
+  shotDelay: 0.5
 --- !u!4 &354718648
 Transform:
   m_ObjectHideFlags: 0
@@ -445,6 +462,60 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &472699204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 472699206}
+  - component: {fileID: 472699205}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &472699205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472699204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3f501f3eb0961479d56523b0214544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToPool:
+  - identifier: 0
+    poolItem: {fileID: 6575682177189021217, guid: 47ef5b572d219034eab7c5605a36f13a,
+      type: 3}
+    numPooled: 30
+    _maxPooled: 256
+  - identifier: 1
+    poolItem: {fileID: 4154974769887662397, guid: 198b8ec0eec70544893e6d1ce1868ff6,
+      type: 3}
+    numPooled: 30
+    _maxPooled: 256
+--- !u!4 &472699206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472699204}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.7, y: -1.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1865940672
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +532,7 @@ GameObject:
   - component: {fileID: 1865940678}
   m_Layer: 0
   m_Name: New Sprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -602,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf285669c1ec81344a86ccbf86d0b15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 3
   Health: 0
 --- !u!1 &1868894382
 GameObject:
