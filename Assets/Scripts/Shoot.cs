@@ -8,17 +8,17 @@ public class Shoot : MonoBehaviour
     public int bulletDamage;
     public float bulletDuration;
     public float shotDelay;
-    float timeSinceLastShot;
-    LinkedList<GameObject> bullets;
+    protected float timeSinceLastShot;
+    protected LinkedList<GameObject> bullets;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         bullets = new LinkedList<GameObject>();
         timeSinceLastShot = 0;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if(timeSinceLastShot <= 0)
         {
@@ -96,7 +96,7 @@ public class Shoot : MonoBehaviour
         
     }
 
-    Vector2 projectileSpawnLoc(Direction dir)
+    protected Vector2 projectileSpawnLoc(Direction dir)
     {
         Vector2 location = Vector2.zero;
         float scale = 2f*gameObject.transform.localScale.x;
