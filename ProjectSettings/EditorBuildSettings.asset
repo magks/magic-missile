@@ -14,7 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Introlevel.unity
     guid: c7f00aca631b448409f2fc9c5bfe77af
-  - enabled: 1
+  - enabled: 0
     path: Assets/Much meme such dank.unity
     guid: 6b33afb1e0340444f8b98e45bda7a11b
+  - enabled: 1
+    path: Assets/DeathScreen.unity
+    guid: 90f81eb355c948da591b0f9429976453
+  - enabled: 1
+    path: Assets/StartMenu.unity
+    guid: ebbb67c6b4b1ec6d0a9f19b87a1f7ffa
   m_configObjects: {}
