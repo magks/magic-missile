@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         Vector2 v2 = new Vector2(inputX * speed, rigid.velocity.y);
 
         rigid.velocity = v2;
-        print(v2);
 
         // If the input is moving the player right and the player is facing left...
         if (inputX > 0 && !facingRight)
