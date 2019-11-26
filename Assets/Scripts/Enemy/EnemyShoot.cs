@@ -8,6 +8,7 @@ public class EnemyShoot : Shoot
     // Start is called before the first frame update
     protected override void Start()
     {
+        timeSinceLastShot = shotDelay;
         player = GameObject.FindGameObjectWithTag("Player");
         base.Start();
     }
@@ -42,7 +43,7 @@ public class EnemyShoot : Shoot
         return dirVector.normalized * scale;
     }
 
-    GameObject ShootBullet()
+    protected virtual GameObject ShootBullet()
     {
         GameObject thisBullet = ProjectilePool.projectilePool.getPooledObject(PoolID.enemyProjectile);
         Projectile bulletProperties = thisBullet.GetComponent<Projectile>();
@@ -52,7 +53,7 @@ public class EnemyShoot : Shoot
         thisBullet.transform.SetParent(gameObject.transform, false);
         thisBullet.transform.localPosition = projectileSpawnLoc(dirVector);
         thisBullet.transform.SetParent(null);
-        thisBullet.transform.localScale = Vector3.one;
+        thisBullet.transform.localScale = dirVector.x > 0? Vector3.one : new Vector3(-1, 1, 1);
         bulletProperties.setDuration(bulletDuration);
         bulletProperties.speed = bulletSpeed;
         bulletProperties.damage = bulletDamage;
