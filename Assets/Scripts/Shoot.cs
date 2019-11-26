@@ -98,39 +98,42 @@ public class Shoot : MonoBehaviour
 
     protected Vector2 projectileSpawnLoc(Direction dir)
     {
-        Vector2 location = Vector2.zero;
-        float scale = 2f*gameObject.transform.localScale.x;
+        int reflection = gameObject.transform.localScale.x >= 0 ? 1 : -1;
+        Vector2 location = reflection >=0?new Vector3(1.1f,.45f,0): new Vector3(1f,.45f,0);
+        
+
         switch (dir)
         {
             case Direction.Up:
-                location = Vector2.up * scale;
+                location.y += 1f;
                 break;
             case Direction.UpRight:
-                location = (Vector2.one).normalized * scale ;
+                location += (new Vector2(1 * reflection, 1)).normalized;
                 
                 break;
             case Direction.Right:
-                location = Vector2.right * scale;
+                location.x += 1 * reflection;
                 break;
             case Direction.DownRight:
-                location = (new Vector2(1, -1)).normalized * scale;
+                location += (new Vector2(1 * reflection, -1)).normalized;
                 break;
             case Direction.Down:
-                location = Vector2.down * scale;
+                location.y += -1;
                 break;
             case Direction.DownLeft:
-                location = (Vector2.one).normalized * -scale;
+                location += (new Vector2(-1 * reflection, -1)).normalized;
                 break;
             case Direction.Left:
-                location = Vector2.left * scale;
+                location.x += -1 * reflection;
                 break;
             case Direction.UpLeft:
-                location = (new Vector2(-1, 1)).normalized * scale;
+                location += (new Vector2(-1 * reflection, 1)).normalized;
                 break;
             default:
                 location = Vector2.zero;
                 break;
         }
+        
         return location;
     }
 
