@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingRight: 1
+  gameObject: {fileID: 354718646}
   speed: 11
   jumpHeight: 13
 --- !u!61 &354718650

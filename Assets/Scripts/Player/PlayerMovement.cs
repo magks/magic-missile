@@ -11,12 +11,13 @@ public class PlayerMovement : MonoBehaviour
     int _currentAnimationState = STATE_IDLE;
     [HideInInspector]
     public bool facingRight = true;
-
+    public GameObject gameObject;
     public float speed = 4;
     public float jumpHeight = 13;
     private Rigidbody2D rigid;
     private PlayerAudio audioPlayer;
 
+    private bool falling = false;
 
     // Use this for initialization
     void Start()
@@ -56,9 +57,20 @@ public class PlayerMovement : MonoBehaviour
         {
             v2.y = jumpHeight;
             rigid.velocity = v2;
-            audioPlayer.JumpSound();
-           // changeState(STATE_JUMP);
+            // changeState(STATE_JUMP);
         }
+        if (Input.GetKeyDown("s")) //&& (gameObject.layer == LayerMask.NameToLayer("Character")))
+        {
+            gameObject.layer = 0; //0 is the default layer
+            falling = true;
+        }
+        
+        if (Input.GetKeyUp("s") && falling)
+        {
+            gameObject.layer = 8; //8 is the character layer
+            falling = false;
+        }
+
         else
         {
             //changeState(STATE_IDLE);
