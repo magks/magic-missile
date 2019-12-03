@@ -43,7 +43,7 @@ public class EnemyShoot : Shoot
         return dirVector.normalized * scale;
     }
 
-    protected virtual GameObject ShootBullet()
+    protected GameObject ShootBullet()
     {
         GameObject thisBullet = ProjectilePool.projectilePool.getPooledObject(PoolID.enemyProjectile);
         Projectile bulletProperties = thisBullet.GetComponent<Projectile>();
@@ -60,5 +60,10 @@ public class EnemyShoot : Shoot
         bulletProperties.setDirection(dirVector.normalized);
         thisBullet.SetActive(true);
         return thisBullet;
+    }
+
+    protected new GameObject ShootBullet(Direction dir)
+    {
+        return null;
     }
 }
