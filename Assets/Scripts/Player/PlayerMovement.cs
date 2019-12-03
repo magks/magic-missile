@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
     public bool facingRight = true;
 
     public float speed = 4;
+    public float jumpHeight = 13;
     private Rigidbody2D rigid;
+    private PlayerAudio audioPlayer;
 
 
     // Use this for initialization
@@ -21,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //animator = this.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
-
+        audioPlayer = GetComponent<PlayerAudio>();
     }
 
     // Update is called once per frame
@@ -52,8 +54,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && Grounded)
         {
-            v2.y = 13;
+            v2.y = jumpHeight;
             rigid.velocity = v2;
+            audioPlayer.JumpSound();
            // changeState(STATE_JUMP);
         }
         else
