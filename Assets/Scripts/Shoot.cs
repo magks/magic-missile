@@ -137,7 +137,7 @@ public class Shoot : MonoBehaviour
         return location;
     }
 
-    GameObject ShootBullet(Direction dir)
+    protected virtual GameObject ShootBullet(Direction dir)
     {
         GameObject thisBullet = ProjectilePool.projectilePool.getPooledObject(PoolID.playerProjectile);
         Projectile bulletProperties = thisBullet.GetComponent<Projectile>();
