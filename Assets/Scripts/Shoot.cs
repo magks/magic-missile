@@ -8,17 +8,17 @@ public class Shoot : MonoBehaviour
     public int bulletDamage;
     public float bulletDuration;
     public float shotDelay;
-    float timeSinceLastShot;
-    LinkedList<GameObject> bullets;
+    protected float timeSinceLastShot;
+    protected LinkedList<GameObject> bullets;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         bullets = new LinkedList<GameObject>();
         timeSinceLastShot = 0;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if(timeSinceLastShot <= 0)
         {
@@ -96,45 +96,48 @@ public class Shoot : MonoBehaviour
         
     }
 
-    Vector2 projectileSpawnLoc(Direction dir)
+    protected Vector2 projectileSpawnLoc(Direction dir)
     {
-        Vector2 location = Vector2.zero;
-        float scale = 2f*gameObject.transform.localScale.x;
+        int reflection = gameObject.transform.localScale.x >= 0 ? 1 : -1;
+        Vector2 location = reflection >=0?new Vector3(1.1f,.45f,0): new Vector3(1f,.45f,0);
+        
+
         switch (dir)
         {
             case Direction.Up:
-                location = Vector2.up * scale;
+                location.y += 1f;
                 break;
             case Direction.UpRight:
-                location = (Vector2.one).normalized * scale ;
+                location += (new Vector2(1 * reflection, 1)).normalized;
                 
                 break;
             case Direction.Right:
-                location = Vector2.right * scale;
+                location.x += 1 * reflection;
                 break;
             case Direction.DownRight:
-                location = (new Vector2(1, -1)).normalized * scale;
+                location += (new Vector2(1 * reflection, -1)).normalized;
                 break;
             case Direction.Down:
-                location = Vector2.down * scale;
+                location.y += -1;
                 break;
             case Direction.DownLeft:
-                location = (Vector2.one).normalized * -scale;
+                location += (new Vector2(-1 * reflection, -1)).normalized;
                 break;
             case Direction.Left:
-                location = Vector2.left * scale;
+                location.x += -1 * reflection;
                 break;
             case Direction.UpLeft:
-                location = (new Vector2(-1, 1)).normalized * scale;
+                location += (new Vector2(-1 * reflection, 1)).normalized;
                 break;
             default:
                 location = Vector2.zero;
                 break;
         }
+        
         return location;
     }
 
-    GameObject ShootBullet(Direction dir)
+    protected virtual GameObject ShootBullet(Direction dir)
     {
         GameObject thisBullet = ProjectilePool.projectilePool.getPooledObject(PoolID.playerProjectile);
         Projectile bulletProperties = thisBullet.GetComponent<Projectile>();

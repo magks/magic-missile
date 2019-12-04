@@ -92,6 +92,8 @@ public class Projectile : MonoBehaviour
         {
             if (playerProjectile && collision.gameObject.tag == "Enemy")
             {
+                Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+                enemy.Health -= damage;
                 this.gameObject.SetActive(false);
             }
             else if (!playerProjectile && collision.gameObject.tag == "Player")

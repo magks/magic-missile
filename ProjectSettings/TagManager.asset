@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Music
+  - platform
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,6 +17,7 @@ TagManager:
   - 
   - 
   - Background
+  - Characters
   - 
   - 
   - 

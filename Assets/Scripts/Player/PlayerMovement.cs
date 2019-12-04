@@ -11,17 +11,20 @@ public class PlayerMovement : MonoBehaviour
     int _currentAnimationState = STATE_IDLE;
     [HideInInspector]
     public bool facingRight = true;
-
+    public GameObject gameObject;
     public float speed = 4;
+    public float jumpHeight = 13;
     private Rigidbody2D rigid;
+    private PlayerAudio audioPlayer;
 
+    private bool falling = false;
 
     // Use this for initialization
     void Start()
     {
         //animator = this.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
-
+        audioPlayer = GetComponent<PlayerAudio>();
     }
 
     // Update is called once per frame
@@ -33,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
         Vector2 v2 = new Vector2(inputX * speed, rigid.velocity.y);
 
         rigid.velocity = v2;
-        print(v2);
 
         // If the input is moving the player right and the player is facing left...
         if (inputX > 0 && !facingRight)
@@ -53,10 +55,22 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && Grounded)
         {
-            v2.y = 13;
+            v2.y = jumpHeight;
             rigid.velocity = v2;
-           // changeState(STATE_JUMP);
+            // changeState(STATE_JUMP);
         }
+        if (Input.GetKeyDown("s")) //&& (gameObject.layer == LayerMask.NameToLayer("Character")))
+        {
+            gameObject.layer = 0; //0 is the default layer
+            falling = true;
+        }
+        
+        if (Input.GetKeyUp("s") && falling)
+        {
+            gameObject.layer = 8; //8 is the character layer
+            falling = false;
+        }
+
         else
         {
             //changeState(STATE_IDLE);
