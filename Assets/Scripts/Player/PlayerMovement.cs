@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetKeyUp("s") && falling)
         {
-            gameObject.layer = 8; //8 is the character layer
+            gameObject.layer = 9; //9 is the character layer
             falling = false;
         }
 
