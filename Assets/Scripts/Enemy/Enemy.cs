@@ -9,11 +9,13 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public int Health;
     SpriteRenderer sprite;
+    AudioSource audioData;
     // Start is called before the first frame update
     void Start()
     {
         Health = maxHealth;
         sprite = GetComponent<SpriteRenderer>();
+        Debug.Log("born");
     }
 
     void Die()
@@ -33,7 +35,8 @@ public class Enemy : MonoBehaviour
             animTime += Time.deltaTime;
             yield return null;
         }
-        
+
+
     }
 
     // Update is called once per frame
@@ -41,6 +44,9 @@ public class Enemy : MonoBehaviour
     {
         if(Health <= 0)
         {
+            audioData = GetComponent<AudioSource>();
+            audioData.Play(0);
+            Debug.Log("dead");
             gameObject.SetActive(false);
         }
     }
