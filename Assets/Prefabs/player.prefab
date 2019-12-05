@@ -520,6 +520,7 @@ GameObject:
   - component: {fileID: 9059130936504709766}
   - component: {fileID: 3377826886170414034}
   - component: {fileID: 137348225267215031}
+  - component: {fileID: 2799328320240007646}
   m_Layer: 9
   m_Name: player
   m_TagString: Player
@@ -647,6 +648,19 @@ MonoBehaviour:
   fire: {fileID: 8393575919504656243}
   jump: {fileID: 2436825519305611371}
   death: {fileID: 4179355985588357567}
+--- !u!114 &2799328320240007646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059130936504709772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9959e0738d0f33e4ea7acbee8c2f249e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 3
 --- !u!1 &9059130936618779973
 GameObject:
   m_ObjectHideFlags: 0
