@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8066150234083924395}
   - component: {fileID: 1888751808622965444}
   - component: {fileID: 1592535966013081110}
+  - component: {fileID: 2915406373305446340}
   m_Layer: 0
   m_Name: slimeData
   m_TagString: Enemy
@@ -282,6 +283,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2915406373305446340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593004273167270543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a04da7e0df2de32492416fb027c8e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy_death: {fileID: 8300000, guid: fb275bf94c89f90949e9530404f7430d, type: 3}
 --- !u!1 &2687228691744754952
 GameObject:
   m_ObjectHideFlags: 0
