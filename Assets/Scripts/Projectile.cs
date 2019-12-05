@@ -99,6 +99,8 @@ public class Projectile : MonoBehaviour
             else if (!playerProjectile && collision.gameObject.tag == "Player")
             {
                 this.gameObject.SetActive(false);
+                Player player = collision.GetComponent<Player>();
+                player.TakeDamage(damage);
             }
         }
     }
