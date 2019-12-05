@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Much meme such dank.unity
     guid: 6b33afb1e0340444f8b98e45bda7a11b
   - enabled: 1
-    path: Assets/DeathScreen.unity
+    path: Assets/Scene/DeathScreen.unity
     guid: 90f81eb355c948da591b0f9429976453
   - enabled: 1
     path: Assets/StartMenu.unity
