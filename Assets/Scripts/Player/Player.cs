@@ -29,11 +29,14 @@ public class Player : MonoBehaviour
     private GameObject deathScreen;
     [SerializeField]
     private GameObject playerSprite;
+
+    private PlayerAudio audioplayer;
     private int _curHealth;
     bool dead;
     // Start is called before the first frame update
     void Start()
     {
+        audioplayer = GetComponent<PlayerAudio>();
         _curHealth = maxHP;
         dead = false;
     }
@@ -63,6 +66,7 @@ public class Player : MonoBehaviour
     void Die()
     {
         //SceneManager.LoadScene()
+        audioplayer.DeathSound();
         Camera.main.transform.SetParent(null, true);
         dead = true;
         GetComponent<PlayerMovement>().enabled = false;
