@@ -44,8 +44,8 @@ public class Enemy : MonoBehaviour
     {
         if(Health <= 0)
         {
-            audioData = GetComponent<AudioSource>();
-            audioData.Play(0);
+            //audioData = GetComponent<AudioSource>();
+            //audioData.Play(0);
             Debug.Log("dead");
             gameObject.SetActive(false);
         }
