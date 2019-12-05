@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
- 
+
 public class DeathScreenController : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -17,6 +17,6 @@ public class DeathScreenController : MonoBehaviour
 		//	transform.Rotate(new Vector3(90, 0, 0), Space.World);
 		//Wait for 2 seconds before returning to Main Menu
 		yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("StartMenu"); 
+        SceneManager.LoadScene("StartMenu 1");
 	}
 }
