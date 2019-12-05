@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5377084991861020133}
   - component: {fileID: 8066150234083924395}
   - component: {fileID: 1888751808622965444}
-  - component: {fileID: 1592535966013081110}
+  - component: {fileID: 6559941541639244319}
   m_Layer: 0
   m_Name: slimeData
   m_TagString: Enemy
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 63a5cc2f22536bd42861e0dde6f60b50, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09298555bf40a19439493ab75bfeafea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -186,7 +186,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.006723881, y: 0.24179816}
   m_Size: {x: 1.3365524, y: 1.7596738}
   m_Direction: 0
---- !u!82 &1592535966013081110
+--- !u!82 &6559941541639244319
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7006874698982869727}
   m_Layer: 0
-  m_Name: slime
+  m_Name: slime_blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
