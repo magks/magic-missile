@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public int Health;
     SpriteRenderer sprite;
     AudioSource audioData;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,8 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-
+		Debug.Log("dead");
+		gameObject.SetActive(false);
     }
 
     public IEnumerator DeathFade()
@@ -35,8 +37,6 @@ public class Enemy : MonoBehaviour
             animTime += Time.deltaTime;
             yield return null;
         }
-
-
     }
 
     // Update is called once per frame
@@ -46,8 +46,7 @@ public class Enemy : MonoBehaviour
         {
             //audioData = GetComponent<AudioSource>();
             //audioData.Play(0);
-            Debug.Log("dead");
-            gameObject.SetActive(false);
+			Die();
         }
     }
 }
