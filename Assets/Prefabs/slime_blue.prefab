@@ -136,8 +136,8 @@ MonoBehaviour:
   bulletSpeed: 5
   bulletDamage: 1
   bulletDuration: 5
-  shotDelay: 3
-  additionalRandomDelay: 2
+  shotDelay: 2
+  additionalRandomDelay: 1.5
 --- !u!114 &5377084991861020133
 MonoBehaviour:
   m_ObjectHideFlags: 0

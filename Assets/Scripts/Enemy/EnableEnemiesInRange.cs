@@ -18,7 +18,6 @@ public class EnableEnemiesInRange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("yes");
         if(collision.gameObject.tag == "Enemy")
         {
             ActiveWhenInRange activator = collision.gameObject.GetComponent<ActiveWhenInRange>();
