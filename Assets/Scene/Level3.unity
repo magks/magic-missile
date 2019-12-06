@@ -3707,7 +3707,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251086754
 GameObject:
@@ -3798,7 +3798,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1276366593}
-  - component: {fileID: 1276366594}
   m_Layer: 0
   m_Name: enemies
   m_TagString: Untagged
@@ -3829,19 +3828,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1276366594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276366592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dc5e82fb5d2614498ceac4087cf4c97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeOverlay: {fileID: 1234340506}
 --- !u!1 &1282937416
 GameObject:
   m_ObjectHideFlags: 0
@@ -5741,26 +5727,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1276366593}
     m_Modifications:
-    - target: {fileID: 2485772275649195307, guid: 830dd39527c04034ba568ad4d5b76edd,
-        type: 3}
-      propertyPath: Priority
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2485772275649195307, guid: 830dd39527c04034ba568ad4d5b76edd,
-        type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.558
-      objectReference: {fileID: 0}
-    - target: {fileID: 2485772275649195307, guid: 830dd39527c04034ba568ad4d5b76edd,
-        type: 3}
-      propertyPath: m_Pitch
-      value: 2.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 2485772275649195307, guid: 830dd39527c04034ba568ad4d5b76edd,
-        type: 3}
-      propertyPath: MaxDistance
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 2687228691744754952, guid: 830dd39527c04034ba568ad4d5b76edd,
         type: 3}
       propertyPath: m_Name
@@ -5825,6 +5791,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485772275649195307, guid: 830dd39527c04034ba568ad4d5b76edd,
+        type: 3}
+      propertyPath: Priority
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485772275649195307, guid: 830dd39527c04034ba568ad4d5b76edd,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.558
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485772275649195307, guid: 830dd39527c04034ba568ad4d5b76edd,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 2.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485772275649195307, guid: 830dd39527c04034ba568ad4d5b76edd,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 830dd39527c04034ba568ad4d5b76edd, type: 3}
@@ -7234,6 +7220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc5e82fb5d2614498ceac4087cf4c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOverlay: {fileID: 1234340506}
 --- !u!4 &2063106104
 Transform:
   m_ObjectHideFlags: 0
@@ -7345,17 +7332,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8673385106467732943, guid: 198b8ec0eec70544893e6d1ce1868ff6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 687971759480990470, guid: 198b8ec0eec70544893e6d1ce1868ff6,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: fd9babea752b73844b66d80965a8465b,
-        type: 3}
     - target: {fileID: 4154974769887662397, guid: 198b8ec0eec70544893e6d1ce1868ff6,
         type: 3}
       propertyPath: m_Name
@@ -7436,5 +7412,16 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8673385106467732943, guid: 198b8ec0eec70544893e6d1ce1868ff6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 687971759480990470, guid: 198b8ec0eec70544893e6d1ce1868ff6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fd9babea752b73844b66d80965a8465b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 198b8ec0eec70544893e6d1ce1868ff6, type: 3}
