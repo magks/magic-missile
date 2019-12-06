@@ -6,12 +6,20 @@ using UnityEngine.SceneManagement;
 {
      public GameObject fadeOverlay;
      private SpriteRenderer fadeSprite;
+
+	 GameObject[] enemies;
      int enemiesLeft = 0;
      bool complete = false;
 
+	void get_enemies()
+	{
+	   	enemies = GameObject.FindGameObjectsWithTag("Enemy");
+	   	enemiesLeft = enemies.Length;
+	}
+
      // Use this for initialization
      void Start () {
-         enemiesLeft = 9; // can i get this programmatically?
+		 get_enemies();
          fadeSprite = fadeOverlay.GetComponent<SpriteRenderer>();
      }
 
@@ -36,9 +44,7 @@ using UnityEngine.SceneManagement;
      // Update is called once per frame
      void Update () 
 	 {
-		 GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-         enemiesLeft = enemies.Length;
-
+		 get_enemies();
          if(enemiesLeft == 0 && !complete)
          {
 			 Debug.Log("Level3: All enemies defeated!");
