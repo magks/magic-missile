@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
  public class EnemyPool: MonoBehaviour
 {
      public GameObject fadeOverlay;
+	 GameObject[] enemies; 
      private SpriteRenderer fadeSprite;
      int enemiesLeft = 0;
      bool complete = false;
 
      // Use this for initialization
-     void Start () {
-         enemiesLeft = 9; // can i get this programmatically?
+     void Start () 
+	 {
+		 get_enemy_count();
          fadeSprite = fadeOverlay.GetComponent<SpriteRenderer>();
      }
 
@@ -33,12 +35,16 @@ using UnityEngine.SceneManagement;
         SceneManager.LoadScene("StartMenu 1");
     }
 
+	void get_enemy_count()
+	{ 
+		enemies = GameObject.FindGameObjectsWithTag("Enemy");
+	   	enemiesLeft = enemies.Length;
+	}
+
      // Update is called once per frame
      void Update () 
 	 {
-		 GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-         enemiesLeft = enemies.Length;
-
+		 get_enemy_count();
          if(enemiesLeft == 0 && !complete)
          {
 			 Debug.Log("Level3: All enemies defeated!");
